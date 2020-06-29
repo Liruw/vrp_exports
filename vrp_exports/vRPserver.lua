@@ -12,8 +12,8 @@ vRPclient = Tunnel.getInterface("vRP")
 local Jenc = json.encode
 local Jdec = json.decode
 --- CONFIG
-local showmsg = true
-local load_server_exports = true
+local showmsg = true  -- true/false Exports Console Log
+local load_server_exports = true -- true/false Exports of Server vRP functions.
 --------------------------------------------------------------------------------------------------------
 
 Citizen.CreateThread(function()   
