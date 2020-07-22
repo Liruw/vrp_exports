@@ -3,12 +3,18 @@ game 'gta5'
 
 name 'vrp_exports'
 description 'Exports vRP (Lua) Functions'
-author 'SolitaryWolf007'
-version '0.9'
+author 'SolitaryWolf#5484'
+version '0.95'
 
 dependencies {
     'vrp',
 }
+
+client_debug 'yes'
+vRPclient_export 'yes'
+
+server_debug 'yes'
+vRP_export 'yes'
 
 client_scripts {
     '@vrp/lib/utils.lua',
