@@ -12,14 +12,18 @@ vRPclient = Tunnel.getInterface("vRP")
 local Jenc = json.encode
 local Jdec = json.decode
 --- CONFIG
-local showmsg = true  -- true/false Exports Console Log
-local load_server_exports = true -- true/false Exports of Server vRP functions.
+local debug =       GetResourceMetadata("vrp_exports","server_debug",0)
+local load_server = GetResourceMetadata("vrp_exports","vRP_export",0)
 --------------------------------------------------------------------------------------------------------
 
 Citizen.CreateThread(function()   
      
-     if (not load_server_exports) then return end
-     if showmsg then print("\n^4[vRP EXPORTS] ^0Registering Exports ..^0") end
+     if (load_server ~= 'yes') then 
+          return 
+     end
+     if debug == 'yes' then 
+          print("\n^4[vRP EXPORTS] ^0Registering Server Exports ..^7") 
+     end
      
 --------------------------------------------------------------------------------------------------------
 --- vRP -> Exports for server scripts.
@@ -503,5 +507,7 @@ Citizen.CreateThread(function()
      
 
 
-     if showmsg then print("^4[vRP EXPORTS] ^0Exports registered ^2successfully!^0") end
+     if debug then 
+          print("^4[vRP EXPORTS] ^0Exports registered ^2successfully!^7") 
+     end
 end)
